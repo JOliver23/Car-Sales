@@ -22,8 +22,12 @@ export const appReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_ORDER:
             return {
-                state
-            }
+                ...state,
+               car: {
+                 ...state.car,
+                 features: state.car.features
+               }
+            };
         default:
             return state;
     }
