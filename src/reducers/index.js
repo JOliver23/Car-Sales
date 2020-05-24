@@ -17,7 +17,7 @@ export const initialState = {
     ]
 };
 
-export const appReducer = (state, action) => {
+export const appReducer = (state = initialState, action) => {
     console.log("state", state, "action", action);
     switch (action.type) {
         case UPDATE_ORDER:

@@ -10,6 +10,7 @@ import './styles.scss';
 import { appReducer } from './reducers';
 
 const store = createStore(appReducer);
+console.log('current state', store.getState());
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
