@@ -1,4 +1,4 @@
-import { UPDATE_ORDER } from '../actions';
+import { ADD_FT, REMOVE_FT, NEW_TOTAL } from '../actions';
 
 export const initialState = {
     additionalPrice: 0,
@@ -19,15 +19,32 @@ export const initialState = {
 
 export const appReducer = (state = initialState, action) => {
     console.log("state", state, "action", action);
+    
     switch (action.type) {
-        case UPDATE_ORDER:
+        case ADD_FT:
             return {
                 ...state,
                car: {
                  ...state.car,
-                 features: state.car.features
+                 features: state.additionalFeatures
                }
             };
+
+        case "remove selected feature":
+          return {
+            state
+          };
+
+        case "add totals":
+          return {
+            state
+            //{state.price + state.additionalPrice}
+          };
+
+        case "MAYBE":
+          return {
+            state
+          }
         default:
             return state;
     }
