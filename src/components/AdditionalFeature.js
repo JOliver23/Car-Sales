@@ -10,7 +10,7 @@ console.log(props.feature);
   return (
     <li>
       {/* onCLick={() => {props.actions(state var);}} Add an onClick that will let you add a feature to your car */}
-      <button className="button" onClick={() => props.updateFeatures}>Add</button>
+      <button className="button" onClick={() => props.updateFeatures(props.feature)}>Add</button>
       {props.feature.name} (+{props.feature.price})
     </li>
   );
