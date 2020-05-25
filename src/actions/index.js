@@ -7,6 +7,6 @@ export const updateFeatures = additionalFeature => {
     console.log("function update features")
     return {
         type: ADD_FT,
-        payload: {features: additionalFeature}
+        payload: additionalFeature
     }
 }
