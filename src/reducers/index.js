@@ -23,16 +23,14 @@ export const appReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_FT:
             console.log("state from ADD_FT", state.car)
-            //how do i get the payload into state.car.features array? works, now stay in state for adding multy ft?
+            //how do i get the payload into state.car.features array? works, now stay in state for adding multy ft? 
             return {
-                ...state,
-               car: {
-                 ...state.car,
-                 features: {
-                   ...state.features,
-                   features: action.payload
-                 }
-               }
+              ...state,
+              car: {
+                  ...state.car,
+                  features: [...state.car.features, action.payload]
+              },
+              additionalPrice: state.additionalPrice + action.payload.price,
             };
 
         case REMOVE_FT:
