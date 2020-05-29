@@ -18,7 +18,6 @@ console.log(props.feature);
 
 const mapStateToProps = state => {
   return {
-    features: state.additionalFeature
   }
 }
 

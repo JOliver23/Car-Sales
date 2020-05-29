@@ -10,3 +10,10 @@ export const updateFeatures = additionalFeature => {
         payload: additionalFeature
     }
 }
+
+export const removeFeature = removeTarget => {
+    return {
+        type: REMOVE_FT,
+        payload: removeTarget
+    }
+}

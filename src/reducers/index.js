@@ -31,12 +31,18 @@ export const appReducer = (state = initialState, action) => {
                   features: [...state.car.features, action.payload]
               },
               additionalPrice: state.additionalPrice + action.payload.price,
+              additionalFeatures: state.additionalFeatures.filter(feature => feature !== action.payload.feature)
             };
 
         case REMOVE_FT:
           return {
-            state
-          };
+            ...state,
+            car: {
+                ...state.car,
+                features: state.car.features.filter(feature => feature !== action.payload)
+            },
+            
+        }
 
         case NEW_TOTAL:
           return {
