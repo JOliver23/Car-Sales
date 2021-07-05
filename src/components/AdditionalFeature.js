@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { updateFeatures } from '../actions';
+//import actions from '../actions';
 
 const AdditionalFeature = props => {
+console.log(props.feature);
+  // const [newFeature, setNewFeature] = useState();
+
   return (
     <li>
-      {/* Add an onClick that will let you add a feature to your car */}
-      <button className="button">Add</button>
+      {/* onCLick={() => {props.actions(state var);}} Add an onClick that will let you add a feature to your car */}
+      <button className="button" onClick={() => props.updateFeatures(props.feature)}>Add</button>
       {props.feature.name} (+{props.feature.price})
     </li>
   );
 };
 
-export default AdditionalFeature;
+const mapStateToProps = state => {
+  return {
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  {updateFeatures}
+) (AdditionalFeature);
